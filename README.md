@@ -14,9 +14,9 @@ What we want to see are:
 
 ---
 
+![alt text](image/img1.png)
 #### **What have I done!!**
 - just made this converter using `React`. Have a view.
-![alt text](image/img1.png)
 - Used api from `https://www.currencyconverterapi.com`.
 - Select the currencies that you want then click _Convert_
 button. Result will shown billow.
