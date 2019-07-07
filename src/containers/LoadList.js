@@ -11,6 +11,7 @@ class LoadList extends Component{
     src: '',
     dest: '',
     inp: '',
+    history: [],
   };
 
   componentDidMount() {
@@ -21,6 +22,29 @@ class LoadList extends Component{
         });
       })
   }
+
+  convertDataHandler = () => {
+    const data = {
+      lists: this.state.lists,
+      src: this.state.src,
+      dest: this.state.dest,
+      inp: this.state.inp,
+    };
+
+    const key = data.src+'_'+data.dest;
+    axios.get('https://free.currconv.com/api/v7/convert?q='+key+'&compact=ultra&apiKey=6e08d470b6ad5a313074')
+      .then(response => {
+        const cont = response.data;
+        let result = cont[key];
+
+        result = result * this.state.inp;
+        this.setState({
+          history: this.state.history.concat(result)
+        });
+        /*console.log(result);
+        console.log(this.state.history);*/
+      });
+  };
 
   render() {
     return (
@@ -59,9 +83,19 @@ class LoadList extends Component{
           <input type="text" className="form-control"
                  onChange={(event => this.setState({inp: event.target.value}))}/>
         </div>
-        <button >Convert</button>
+        <button onClick={this.convertDataHandler}>Convert</button>
 
         <h4 className="mt-5">Result: {this.state.dest}</h4>
+
+        <h4 className="mt-5">History:</h4>
+        <ol>
+          {
+            this.state.history.map(elm => (
+              <li
+              key={Math.random()}>{elm}</li>
+            ))
+          }
+        </ol>
       </div>
     );
   }
