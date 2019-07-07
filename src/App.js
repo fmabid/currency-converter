@@ -8,7 +8,15 @@ function App() {
   return (
     <div className="container-fluid">
       <div className="container">
-        <LoadList/>
+        <div className="row">
+          <div className="offset-4"></div>
+
+          <div className="col-sm-4">
+            <LoadList/>
+          </div>
+
+          <div className="offset-4"></div>
+        </div>
       </div>
     </div>
   );
