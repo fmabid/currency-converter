@@ -8,9 +8,7 @@ function App() {
   return (
     <div className="container-fluid">
       <div className="container">
-        <form>
-          <LoadList/>
-        </form>
+        <LoadList/>
       </div>
     </div>
   );

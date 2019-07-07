@@ -2,15 +2,18 @@ import axios from "axios";
 
 const initialState = {
   amount: 0,
-  resultHistory: []
+  resultHistory: [],
+  source: '',
+  destination: '',
 };
 
 const reducer = (state = initialState, action) => {
   switch(action.type) {
-    case 'SLCT':
+    case 'SLCTD':
+      const src = Object.assign(action.payload);
       return {
         ...state,
-        resultHistory: state.resultHistory
+        resultHistory: src
       }
   }
 

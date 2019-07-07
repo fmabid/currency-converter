@@ -4,16 +4,23 @@ import { connect } from 'react-redux';
 import DropdownList from "../components/DropdownList";
 
 class FormDropdown extends Component{
+  state = {
+    src: '',
+    dest: '',
+  };
+
   render() {
     return (
-      <select className="form-control">
+      <select className="form-control"
+              value={this.state.src}
+              onChange={(event) => this.props.onSelect(event.target.value)}>
         {
           this.props.lists.map(list => (
             <DropdownList
               key={Math.random()}
               element={list}/>
           ))
-        }
+        } {console.log(this.source.source)}
       </select>
     );
   }
@@ -24,7 +31,9 @@ class FormDropdown extends Component{
 const mapStateToProps = state => {
   return{
     inputtedAmount: state.amount,
-    storedResults: state.resultHistory
+    storedResults: state.resultHistory,
+    source: state.source,
+    destination: state.destination,
   };
 };
 
