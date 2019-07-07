@@ -1,13 +1,17 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 
 import './App.css';
+import LoadList from './containers/LoadList';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-
-      </header>
+    <div className="container-fluid">
+      <div className="container">
+        <form>
+          <LoadList/>
+        </form>
+      </div>
     </div>
   );
 }
