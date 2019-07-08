@@ -8,10 +8,10 @@ function App() {
   return (
     <div className="container-fluid">
       <div className="container">
-        <div className="row">
+        <div className="row my-5">
           <div className="offset-4"></div>
 
-          <div className="col-sm-4">
+          <div className="App-bg col-sm-4">
             <LoadList/>
           </div>
 

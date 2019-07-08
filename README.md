@@ -14,7 +14,7 @@ What we want to see are:
 
 ---
 
-![alt text](image/img1.png)
+![alt text](image/img2.png)
 #### **What have I done!!**
 - just made this converter using `React`. Have a view.
 - Used api from `https://www.currencyconverterapi.com`.

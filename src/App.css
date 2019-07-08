@@ -1,5 +1,7 @@
-.App {
+.App-bg {
   text-align: center;
+  background-color: #ffffff;
+  border-radius: 5px;
 }
 
 .App-header {
